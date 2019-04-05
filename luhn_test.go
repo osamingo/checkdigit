@@ -90,7 +90,7 @@ func TestLuhn_Generate(t *testing.T) {
 				t.Error("unexpected error")
 			}
 			if c.out != r {
-				t.Errorf("not equal, expected = %c, given = %c", c.out, r)
+				t.Errorf("not equal, expected = %d, given = %d", c.out, r)
 			}
 		})
 	}

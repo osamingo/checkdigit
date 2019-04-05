@@ -12,7 +12,6 @@ func (l *luhn) Verify(code string) bool {
 	i, err := l.Generate(code[:len(code)-1])
 
 	return err == nil && i == int(code[len(code)-1]-'0')
-
 }
 
 // Generate implements checkdigit.Generator interface.
