@@ -3,7 +3,7 @@ linters-settings:
     check-type-asserts: true
     check-blank: true
   misspell:
-    locale: USs
+    locale: US
 
 linters:
   enable-all: true
