@@ -12,6 +12,6 @@ func (v *verhoeff) Verify(code string) bool {
 }
 
 // Generate implements checkdigit.Generator interface.
-func (v *verhoeff) Generate(seed string) (rune, error) {
+func (v *verhoeff) Generate(seed string) (int, error) {
 	return 0, nil
 }

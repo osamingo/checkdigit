@@ -9,7 +9,7 @@ type (
 	}
 	// A Generator is generate a check digit by implemented algorithm.
 	Generator interface {
-		Generate(seed string) (rune, error)
+		Generate(seed string) (int, error)
 	}
 	// A Provider has Verifier and Generator interfaces.
 	Provider interface {
