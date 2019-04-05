@@ -24,7 +24,7 @@ func (d *damm) Generate(seed string) (int, error) {
 	}
 
 	interim := 0
-	for _, n := range []rune(seed) {
+	for _, n := range seed {
 		if n < '0' || '9' < n {
 			return 0, ErrInvalidArgument
 		}
