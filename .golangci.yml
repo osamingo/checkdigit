@@ -1,0 +1,9 @@
+linters-settings:
+  errcheck:
+    check-type-asserts: true
+    check-blank: true
+  misspell:
+    locale: USs
+
+linters:
+  enable-all: true
