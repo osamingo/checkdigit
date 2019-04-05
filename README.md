@@ -1,2 +1,5 @@
 # checkdigit
-Provide check digit algorithm (Luhn, Damm, Verhoeff) written by Go
+
+## About
+
+Provide check digit algorithm (Luhn, Damm, Verhoeff) written by Go.
