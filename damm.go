@@ -10,6 +10,6 @@ func (d *damm) Verify(code string) bool {
 }
 
 // Generate implements checkdigit.Generator interface.
-func (d *damm) Generate(seed string) (rune, error) {
+func (d *damm) Generate(seed string) (int, error) {
 	return 0, nil
 }
