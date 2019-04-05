@@ -18,7 +18,7 @@ type (
 	}
 )
 
-// An ErrInvalidArgument is happen when given wrong argument.
+// ErrInvalidArgument is happen when given wrong argument.
 var ErrInvalidArgument = errors.New("checkdigit: invalid argument")
 
 // NewLuhnProvider returns new Provider that implemented luhn algorithm.
