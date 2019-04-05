@@ -1,5 +1,7 @@
 package checkdigit
 
+import "errors"
+
 type (
 	// A Verifier is verify to code by implemented algorithm.
 	Verifier interface {
@@ -15,6 +17,9 @@ type (
 		Generator
 	}
 )
+
+// An ErrInvalidArgument is happen when given wrong argument.
+var ErrInvalidArgument = errors.New("checkdigit: invalid argument")
 
 // NewLuhnProvider returns new Provider that implemented luhn algorithm.
 func NewLuhnProvider() Provider {
