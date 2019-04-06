@@ -1,6 +1,10 @@
-package checkdigit
+package checkdigit_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/osamingo/checkdigit"
+)
 
 func TestDamm_Verify(t *testing.T) {
 
@@ -34,7 +38,7 @@ func TestDamm_Verify(t *testing.T) {
 	for name, c := range cases {
 		c := c
 		t.Run(name, func(t *testing.T) {
-			ret := NewDammProvider().Verify(c.in)
+			ret := checkdigit.NewDamm().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
 			}
@@ -85,7 +89,7 @@ func TestDamm_Generate(t *testing.T) {
 	for name, c := range cases {
 		c := c
 		t.Run(name, func(t *testing.T) {
-			r, err := NewDammProvider().Generate(c.in)
+			r, err := checkdigit.NewDamm().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")
 			}

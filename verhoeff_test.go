@@ -1,6 +1,10 @@
-package checkdigit
+package checkdigit_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/osamingo/checkdigit"
+)
 
 func TestVerhoeff_Verify(t *testing.T) {
 
@@ -34,7 +38,7 @@ func TestVerhoeff_Verify(t *testing.T) {
 	for name, c := range cases {
 		c := c
 		t.Run(name, func(t *testing.T) {
-			ret := NewVerhoeffProvider().Verify(c.in)
+			ret := checkdigit.NewVerhoeff().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
 			}
@@ -81,7 +85,7 @@ func TestVerhoeff_Generate(t *testing.T) {
 	for name, c := range cases {
 		c := c
 		t.Run(name, func(t *testing.T) {
-			r, err := NewVerhoeffProvider().Generate(c.in)
+			r, err := checkdigit.NewVerhoeff().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")
 			}
