@@ -1,6 +1,10 @@
-package checkdigit
+package checkdigit_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/osamingo/checkdigit"
+)
 
 func TestLuhn_Verify(t *testing.T) {
 
@@ -34,7 +38,7 @@ func TestLuhn_Verify(t *testing.T) {
 	for name, c := range cases {
 		c := c
 		t.Run(name, func(t *testing.T) {
-			ret := NewLuhnProvider().Verify(c.in)
+			ret := checkdigit.NewLuhn().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
 			}
@@ -85,7 +89,7 @@ func TestLuhn_Generate(t *testing.T) {
 	for name, c := range cases {
 		c := c
 		t.Run(name, func(t *testing.T) {
-			r, err := NewLuhnProvider().Generate(c.in)
+			r, err := checkdigit.NewLuhn().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")
 			}

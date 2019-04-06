@@ -21,13 +21,13 @@ type (
 // ErrInvalidArgument is happen when given wrong argument.
 var ErrInvalidArgument = errors.New("checkdigit: invalid argument")
 
-// NewLuhnProvider returns new Provider that implemented luhn algorithm.
-func NewLuhnProvider() Provider {
+// NewLuhn returns new Provider that implemented luhn algorithm.
+func NewLuhn() Provider {
 	return &luhn{}
 }
 
-// NewDammProvider returns new Provider that implemented damm algorithm.
-func NewDammProvider() Provider {
+// NewDamm returns new Provider that implemented damm algorithm.
+func NewDamm() Provider {
 	return &damm{
 		matrix: [][]int{
 			{0, 3, 1, 7, 5, 9, 8, 6, 4, 2},
@@ -44,8 +44,8 @@ func NewDammProvider() Provider {
 	}
 }
 
-// NewVerhoeffProvider returns new Provider that implemented verhoeff algorithm.
-func NewVerhoeffProvider() Provider {
+// NewVerhoeff returns new Provider that implemented verhoeff algorithm.
+func NewVerhoeff() Provider {
 	return &verhoeff{
 		multiplication: [][]int{
 			{0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
