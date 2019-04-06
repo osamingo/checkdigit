@@ -10,6 +10,10 @@
 
 Provide check digit algorithms (Luhn, Damm, Verhoeff) written by Go.
 
+## Usage
+
+See [Examples](https://godoc.org/github.com/osamingo/checkdigit).
+
 ## License
 
 Released under the [MIT License](https://github.com/osamingo/checkdigit/blob/master/LICENSE).
