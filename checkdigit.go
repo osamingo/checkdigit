@@ -21,6 +21,10 @@ type (
 // ErrInvalidArgument is happen when given wrong argument.
 var ErrInvalidArgument = errors.New("checkdigit: invalid argument")
 
+func isNotNumber(n rune) bool {
+	return n < '0' || '9' < n
+}
+
 // NewLuhn returns new Provider that implemented luhn algorithm.
 func NewLuhn() Provider {
 	return &luhn{}

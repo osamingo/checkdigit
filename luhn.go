@@ -22,8 +22,8 @@ func (l *luhn) Generate(seed string) (int, error) {
 	}
 
 	sum, parity := 0, (len(seed)+1)%2
-	for i, n := range []rune(seed) {
-		if n < '0' || '9' < n {
+	for i, n := range seed {
+		if isNotNumber(n) {
 			return 0, ErrInvalidArgument
 		}
 		d := int(n - '0')
