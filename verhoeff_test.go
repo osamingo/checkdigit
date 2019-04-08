@@ -76,10 +76,6 @@ func TestVerhoeff_Generate(t *testing.T) {
 			in:      "a",
 			isError: true,
 		},
-		"Irregular 3": {
-			in:      "a",
-			isError: true,
-		},
 	}
 
 	for name, c := range cases {
