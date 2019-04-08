@@ -10,7 +10,6 @@ func (d *damm) Verify(code string) bool {
 	if len(code) < 2 {
 		return false
 	}
-
 	i, err := d.Generate(code[:len(code)-1])
 
 	return err == nil && i == int(code[len(code)-1]-'0')
