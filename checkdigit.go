@@ -76,3 +76,14 @@ func NewVerhoeff() Provider {
 		inverse: []int{0, 4, 3, 2, 1, 5, 6, 7, 8, 9},
 	}
 }
+
+// NewISBN10 returns new Verifier that implemented modulus 11 weight 10 to 2 calculator.
+func NewISBN10() Verifier {
+	return &isbn10{}
+
+}
+
+// NewISBN10 returns new Provider that implemented modulus 10 weight 3 calculator.
+func NewISBN13() Provider {
+	return &isbn13{}
+}
