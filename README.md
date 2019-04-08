@@ -1,6 +1,6 @@
 # checkdigit
 
-[![Travis branch](https://img.shields.io/travis/osamingo/checkdigit/master.svg)](https://travis-ci.org/osamingo/checkdigit)
+[![Build Status](https://travis-ci.org/osamingo/checkdigit.svg?branch=master)](https://travis-ci.org/osamingo/checkdigit)
 [![codecov](https://codecov.io/gh/osamingo/checkdigit/branch/master/graph/badge.svg)](https://codecov.io/gh/osamingo/checkdigit)
 [![Go Report Card](https://goreportcard.com/badge/osamingo/checkdigit)](https://goreportcard.com/report/osamingo/checkdigit)
 [![GoDoc](https://godoc.org/github.com/osamingo/checkdigit?status.svg)](https://godoc.org/github.com/osamingo/checkdigit)
