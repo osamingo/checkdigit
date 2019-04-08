@@ -8,7 +8,26 @@
 
 ## About
 
-Provide check digit algorithms (Luhn, Damm, Verhoeff, ISBN-10 and ISBN-13) written by Go.
+Provide check digit algorithms and calculators written by Go.
+
+### Algorithms
+
+- Luhn
+- Damm
+- Verhoeff
+
+### Calculators
+
+- ISBN-10
+  - Only Verify
+- ISBN-13
+- EAN-8 (GTIN-8)
+- EAN-13 (GTIN-13)
+- JAN-8 (GTIN-8)
+- JAN-13 (GTIN-13)
+- ITF (GTIN-14)
+- UPC (GTIN-12)
+- SSCC (GTIN-18)
 
 ## Usage
 
