@@ -37,7 +37,7 @@ func TestIsbn10_Verify(t *testing.T) {
 			in: "",
 		},
 		"Irregular 5": {
-			in: "a",
+			in: "aaaaaaaaaa",
 		},
 	}
 
@@ -83,7 +83,7 @@ func TestIsbn13_Verify(t *testing.T) {
 			in: "",
 		},
 		"Irregular 5": {
-			in: "a",
+			in: "aaaaaaaaaaaaa",
 		},
 	}
 
