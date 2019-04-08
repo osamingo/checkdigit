@@ -10,7 +10,6 @@ func (g *gtin) Verify(code string) bool {
 	if len(code) != g.digit {
 		return false
 	}
-
 	i, err := g.Generate(code[:len(code)-1])
 
 	return err == nil && i == int(code[len(code)-1]-'0')
@@ -27,11 +26,10 @@ func (g *gtin) Generate(seed string) (int, error) {
 		if isNotNumber(n) {
 			return 0, ErrInvalidArgument
 		}
-		p := i
 		if g.isPositionCorrection {
-			p++
+			i++
 		}
-		if p%2 == 0 {
+		if i%2 == 0 {
 			oddSum += int(n - '0')
 		} else {
 			evenSum += int(n - '0')

@@ -38,7 +38,6 @@ func (i13 *isbn13) Verify(code string) bool {
 	if len(code) != 13 {
 		return false
 	}
-
 	i, err := i13.Generate(code[:len(code)-1])
 
 	return err == nil && i == int(code[len(code)-1]-'0')
@@ -68,5 +67,6 @@ func (i13 *isbn13) Generate(seed string) (int, error) {
 	if d == 10 {
 		d = 0
 	}
+
 	return d, nil
 }

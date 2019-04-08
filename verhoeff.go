@@ -12,7 +12,6 @@ func (v *verhoeff) Verify(code string) bool {
 	if len(code) < 2 {
 		return false
 	}
-
 	i, err := v.Generate(code[:len(code)-1])
 
 	return err == nil && i == int(code[len(code)-1]-'0')
