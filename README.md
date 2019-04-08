@@ -8,7 +8,7 @@
 
 ## About
 
-Provide check digit algorithms (Luhn, Damm, Verhoeff) written by Go.
+Provide check digit algorithms (Luhn, Damm, Verhoeff, ISBN-10 and ISBN-13) written by Go.
 
 ## Usage
 
