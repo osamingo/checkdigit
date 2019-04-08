@@ -10,24 +10,26 @@
 
 Provide check digit algorithms and calculators written by Go.
 
+## Provided methods
+
 ### Algorithms
 
-- Luhn
-- Damm
-- Verhoeff
+- [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm)
+- [Verhoeff](https://en.wikipedia.org/wiki/Verhoeff_algorithm)
+- [Damm](https://en.wikipedia.org/wiki/Damm_algorithm)
 
 ### Calculators
 
-- ISBN-10
+- [ISBN-10](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
   - Only Verify
-- ISBN-13
-- EAN-8 (GTIN-8)
-- EAN-13 (GTIN-13)
-- JAN-8 (GTIN-8)
-- JAN-13 (GTIN-13)
-- ITF (GTIN-14)
-- UPC (GTIN-12)
-- SSCC (GTIN-18)
+- [ISBN-13](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
+- [EAN-8](https://en.wikipedia.org/wiki/EAN-8)
+- [EAN-13](https://en.wikipedia.org/wiki/EAN-13)
+- [JAN-8](https://en.wikipedia.org/wiki/Japanese_Article_Number)
+- [JAN-13](https://en.wikipedia.org/wiki/Japanese_Article_Number)
+- [ITF](https://en.wikipedia.org/wiki/Interleaved_2_of_5)
+- [UPC](https://en.wikipedia.org/wiki/Universal_Product_Code)
+- [SSCC](https://en.wikipedia.org/wiki/Serial_Shipping_Container_Code)
 
 ## Usage
 
