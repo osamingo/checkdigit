@@ -16,15 +16,16 @@ func (i10 *isbn10) Verify(code string) bool {
 	for _, n := range code {
 
 		var d int
-		if n == 'X' {
+		switch {
+		case n == 'X':
 			d = 10
-		} else if isNotNumber(n) {
+		case isNotNumber(n):
 			return false
-		} else {
+		default:
 			d = int(n - '0')
 		}
 
-		sum = sum + (multiply * d)
+		sum += multiply * d
 		multiply--
 	}
 
@@ -41,8 +42,6 @@ func (i13 *isbn13) Verify(code string) bool {
 	i, err := i13.Generate(code[:len(code)-1])
 
 	return err == nil && i == int(code[len(code)-1]-'0')
-
-	return false
 }
 
 // Generate implements checkdigit.Generator interface.
