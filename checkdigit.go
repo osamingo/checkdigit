@@ -87,3 +87,57 @@ func NewISBN10() Verifier {
 func NewISBN13() Provider {
 	return &isbn13{}
 }
+
+// NewEAN8 returns new Provider that implemented GTIN-8 calculator.
+func NewEAN8() Provider {
+	return &gtin{
+		digit:              8,
+		correctionPosition: true,
+	}
+}
+
+// NewEAN13 returns new Provider that implemented GTIN-13 calculator.
+func NewEAN13() Provider {
+	return &gtin{
+		digit:              13,
+		correctionPosition: true,
+	}
+}
+
+// NewJAN8 returns new Provider that implemented GTIN-8 calculator.
+func NewJAN8() Provider {
+	return &gtin{
+		digit:              8,
+		correctionPosition: true,
+	}
+}
+
+// NewJAN13 returns new Provider that implemented GTIN-13 calculator.
+func NewJAN13() Provider {
+	return &gtin{
+		digit:              13,
+		correctionPosition: true,
+	}
+}
+
+// NewITF returns new Provider that implemented GTIN-14 calculator.
+func NewITF() Provider {
+	return &gtin{
+		digit: 14,
+	}
+}
+
+// NewUPC returns new Provider that implemented GTIN-12 calculator.
+func NewUPC() Provider {
+	return &gtin{
+		digit:              12,
+		correctionPosition: true,
+	}
+}
+
+// NewSSCC returns new Provider that implemented GTIN-18 calculator.
+func NewSSCC() Provider {
+	return &gtin{
+		digit: 18,
+	}
+}
