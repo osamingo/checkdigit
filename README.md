@@ -12,7 +12,7 @@ Provide check digit algorithms (Luhn, Damm, Verhoeff) written by Go.
 
 ## Usage
 
-See [Examples](https://godoc.org/github.com/osamingo/checkdigit).
+See [examples](https://godoc.org/github.com/osamingo/checkdigit#pkg-examples).
 
 ## License
 
