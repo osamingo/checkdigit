@@ -83,7 +83,7 @@ func NewISBN10() Verifier {
 
 }
 
-// NewISBN10 returns new Provider that implemented modulus 10 weight 3 calculator.
+// NewISBN13 returns new Provider that implemented modulus 10 weight 3 calculator.
 func NewISBN13() Provider {
 	return &isbn13{}
 }
