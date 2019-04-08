@@ -26,8 +26,8 @@ func (v *verhoeff) Generate(seed string) (int, error) {
 	}
 
 	interim, l := 0, len(seed)
-	for i, n := range []rune(seed) {
-		if n < '0' || '9' < n {
+	for i, n := range seed {
+		if isNotNumber(n) {
 			return 0, ErrInvalidArgument
 		}
 		interim = v.multiplication[interim][v.permutation[(i+1)%8][seed[l-i-1]-'0']]

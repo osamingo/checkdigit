@@ -25,7 +25,7 @@ func (d *damm) Generate(seed string) (int, error) {
 
 	interim := 0
 	for _, n := range seed {
-		if n < '0' || '9' < n {
+		if isNotNumber(n) {
 			return 0, ErrInvalidArgument
 		}
 		interim = d.matrix[interim][int(n-'0')]
