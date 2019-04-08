@@ -1,8 +1,8 @@
 package checkdigit
 
 type gtin struct {
-	digit              int
-	correctionPosition bool
+	digit                int
+	isPositionCorrection bool
 }
 
 func (g *gtin) Verify(code string) bool {
@@ -28,7 +28,7 @@ func (g *gtin) Generate(seed string) (int, error) {
 			return 0, ErrInvalidArgument
 		}
 		p := i
-		if g.correctionPosition {
+		if g.isPositionCorrection {
 			p++
 		}
 		if p%2 == 0 {

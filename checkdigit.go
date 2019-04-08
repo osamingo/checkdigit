@@ -91,32 +91,32 @@ func NewISBN13() Provider {
 // NewEAN8 returns new Provider that implemented GTIN-8 calculator.
 func NewEAN8() Provider {
 	return &gtin{
-		digit:              8,
-		correctionPosition: true,
+		digit:                8,
+		isPositionCorrection: true,
 	}
 }
 
 // NewEAN13 returns new Provider that implemented GTIN-13 calculator.
 func NewEAN13() Provider {
 	return &gtin{
-		digit:              13,
-		correctionPosition: true,
+		digit:                13,
+		isPositionCorrection: true,
 	}
 }
 
 // NewJAN8 returns new Provider that implemented GTIN-8 calculator.
 func NewJAN8() Provider {
 	return &gtin{
-		digit:              8,
-		correctionPosition: true,
+		digit:                8,
+		isPositionCorrection: true,
 	}
 }
 
 // NewJAN13 returns new Provider that implemented GTIN-13 calculator.
 func NewJAN13() Provider {
 	return &gtin{
-		digit:              13,
-		correctionPosition: true,
+		digit:                13,
+		isPositionCorrection: true,
 	}
 }
 
@@ -130,8 +130,8 @@ func NewITF() Provider {
 // NewUPC returns new Provider that implemented GTIN-12 calculator.
 func NewUPC() Provider {
 	return &gtin{
-		digit:              12,
-		correctionPosition: true,
+		digit:                12,
+		isPositionCorrection: true,
 	}
 }
 
