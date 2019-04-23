@@ -52,6 +52,59 @@ func TestIsbn10_Verify(t *testing.T) {
 	}
 }
 
+func TestIsbn10_Generate(t *testing.T) {
+	cases := map[string]struct {
+		in      string
+		out     int
+		isError bool
+	}{
+		"Regular 1": {
+			in:  "002651562",
+			out: 8,
+		},
+		"Regular 2": {
+			in:  "007231592",
+			out: 10,
+		},
+		"Regular 3": {
+			in:  "155860832",
+			out: 10,
+		},
+		"Irregular 1": {
+			isError: true,
+		},
+		"Irregular 2": {
+			in:      "9780002715096",
+			isError: true,
+		},
+		"Irregular 3": {
+			in:      "15586",
+			isError: true,
+		},
+		"Irregular 4": {
+			in:      "155860832X",
+			isError: true,
+		},
+		"Irregular 5": {
+			in:      "aaaaaaaaa",
+			isError: true,
+		},
+	}
+
+	for name, c := range cases {
+		c := c
+		t.Run(name, func(t *testing.T) {
+			r, err := checkdigit.NewISBN10().Generate(c.in)
+			if c.isError && err == nil {
+				t.Error("unexpected error")
+			}
+			if c.out != r {
+				t.Errorf("not equal, expected = %d, given = %d", c.out, r)
+			}
+		})
+	}
+}
+
 func TestIsbn13_Verify(t *testing.T) {
 
 	cases := map[string]struct {

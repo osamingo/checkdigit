@@ -32,6 +32,28 @@ func (i10 *isbn10) Verify(code string) bool {
 	return sum%11 == 0
 }
 
+// Generate implements checkdigit.Generator interface.
+func (i10 *isbn10) Generate(seed string) (int, error) {
+
+	if len(seed) != 9 {
+		return 0, ErrInvalidArgument
+	}
+
+	sum, multiply := 0, 10
+
+	for _, n := range seed {
+
+		if isNotNumber(n) {
+			return 0, ErrInvalidArgument
+		}
+
+		sum += multiply * int(n-'0')
+		multiply--
+	}
+
+	return 11 - sum%11, nil
+}
+
 // Verify implements checkdigit.Verifier interface.
 func (i13 *isbn13) Verify(code string) bool {
 
