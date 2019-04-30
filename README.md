@@ -21,7 +21,6 @@ Provide check digit algorithms and calculators written by Go.
 ### Calculators
 
 - [ISBN-10](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
-  - Only Verify
 - [ISBN-13](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
 - [EAN-8](https://en.wikipedia.org/wiki/EAN-8)
 - [EAN-13](https://en.wikipedia.org/wiki/EAN-13)
