@@ -77,10 +77,9 @@ func NewVerhoeff() Provider {
 	}
 }
 
-// NewISBN10 returns new Verifier that implemented modulus 11 weight 10 to 2 calculator.
+// NewISBN10 returns new Provider that implemented modulus 11 weight 10 to 2 calculator.
 func NewISBN10() Provider {
 	return &isbn10{}
-
 }
 
 // NewISBN13 returns new Provider that implemented modulus 10 weight 3 calculator.
