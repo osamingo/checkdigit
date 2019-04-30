@@ -33,6 +33,7 @@ func (i10 *isbn10) Verify(code string) bool {
 }
 
 // Generate implements checkdigit.Generator interface.
+// This will return a "10" instead of an "X", since the interface expects an int.
 func (i10 *isbn10) Generate(seed string) (int, error) {
 
 	if len(seed) != 9 {
