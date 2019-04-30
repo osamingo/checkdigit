@@ -158,14 +158,24 @@ func ExampleNewVerhoeff() {
 
 func ExampleNewISBN10() {
 
-	v := checkdigit.NewISBN10()
+	p := checkdigit.NewISBN10()
 
-	code := "155860832X"
-	ok := v.Verify(code)
-	fmt.Printf("code: %s, verify: %t\n", code, ok)
+	seed := "155860832"
+	cd, err := p.Generate(seed)
+	if err != nil {
+		log.Fatalln("failed to generate check digit")
+	}
+
+	digit := "X"
+	if cd != 10 {
+		digit = strconv.Itoa(cd)
+	}
+
+	ok := p.Verify(seed + digit)
+	fmt.Printf("seed: %s, check digit: %s, verify: %t\n", seed, digit, ok)
 
 	// Output:
-	// code: 155860832X, verify: true
+	// seed: 155860832, check digit: X, verify: true
 }
 
 func ExampleNewISBN13() {
