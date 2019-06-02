@@ -3,11 +3,11 @@ package checkdigit
 import "errors"
 
 type (
-	// A Verifier is verify to code by implemented algorithm.
+	// A Verifier is verifying to code by implemented algorithm or calculator.
 	Verifier interface {
 		Verify(code string) bool
 	}
-	// A Generator is generate a check digit by implemented algorithm.
+	// A Generator generates a check digit by implemented algorithm or calculator.
 	Generator interface {
 		Generate(seed string) (int, error)
 	}
