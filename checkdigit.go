@@ -1,5 +1,5 @@
 /*
-Provide check digit algorithms and calculators written by Go.
+Package checkdigit provides check digit algorithms and calculators written by Go.
 */
 package checkdigit
 
