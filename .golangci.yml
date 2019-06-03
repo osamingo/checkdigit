@@ -7,5 +7,9 @@ linters-settings:
 
 linters:
   enable-all: true
-  disable:
-    - dupl
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
