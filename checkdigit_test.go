@@ -109,7 +109,7 @@ func ExampleNewLuhn() {
 
 	p := checkdigit.NewLuhn()
 
-	seed := "411111111111111"
+	const seed = "411111111111111"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -126,7 +126,7 @@ func ExampleNewDamm() {
 
 	p := checkdigit.NewDamm()
 
-	seed := "572"
+	const seed = "572"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -143,7 +143,7 @@ func ExampleNewVerhoeff() {
 
 	p := checkdigit.NewVerhoeff()
 
-	seed := "236"
+	const seed = "236"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -160,7 +160,7 @@ func ExampleNewISBN10() {
 
 	p := checkdigit.NewISBN10()
 
-	seed := "155860832"
+	const seed = "155860832"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -182,7 +182,7 @@ func ExampleNewISBN13() {
 
 	p := checkdigit.NewISBN13()
 
-	seed := "978000271217"
+	const seed = "978000271217"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -199,7 +199,7 @@ func ExampleNewEAN8() {
 
 	p := checkdigit.NewEAN8()
 
-	seed := "9638507"
+	const seed = "9638507"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -216,7 +216,7 @@ func ExampleNewEAN13() {
 
 	p := checkdigit.NewEAN13()
 
-	seed := "590123412345"
+	const seed = "590123412345"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -233,7 +233,7 @@ func ExampleNewJAN8() {
 
 	p := checkdigit.NewJAN8()
 
-	seed := "4996871"
+	const seed = "4996871"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -250,7 +250,7 @@ func ExampleNewJAN13() {
 
 	p := checkdigit.NewJAN13()
 
-	seed := "456995111617"
+	const seed = "456995111617"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -267,7 +267,7 @@ func ExampleNewITF() {
 
 	p := checkdigit.NewITF()
 
-	seed := "1456995111617"
+	const seed = "1456995111617"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -284,7 +284,7 @@ func ExampleNewUPC() {
 
 	p := checkdigit.NewUPC()
 
-	seed := "01234567890"
+	const seed = "01234567890"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
@@ -301,7 +301,7 @@ func ExampleNewSSCC() {
 
 	p := checkdigit.NewSSCC()
 
-	seed := "04569951110000001"
+	const seed = "04569951110000001"
 	cd, err := p.Generate(seed)
 	if err != nil {
 		log.Fatalln("failed to generate check digit")
