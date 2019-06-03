@@ -5,7 +5,7 @@ type damm struct {
 }
 
 // Verify implements checkdigit.Verifier interface.
-func (d *damm) Verify(code string) bool {
+func (d damm) Verify(code string) bool {
 
 	if len(code) < 2 {
 		return false

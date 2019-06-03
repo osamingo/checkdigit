@@ -6,7 +6,7 @@ type (
 )
 
 // Verify implements checkdigit.Verifier interface.
-func (i10 *isbn10) Verify(code string) bool {
+func (i10 isbn10) Verify(code string) bool {
 
 	if len(code) != 10 {
 		return false
@@ -56,7 +56,7 @@ func (i10 *isbn10) Generate(seed string) (int, error) {
 }
 
 // Verify implements checkdigit.Verifier interface.
-func (i13 *isbn13) Verify(code string) bool {
+func (i13 isbn13) Verify(code string) bool {
 
 	if len(code) != 13 {
 		return false

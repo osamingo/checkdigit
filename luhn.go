@@ -3,7 +3,7 @@ package checkdigit
 type luhn struct{}
 
 // Verify implements checkdigit.Verifier interface.
-func (l *luhn) Verify(code string) bool {
+func (l luhn) Verify(code string) bool {
 
 	if len(code) < 2 {
 		return false
