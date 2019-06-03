@@ -1,11 +1,12 @@
 package checkdigit
 
 type gtin struct {
-	digit                int
-	isPositionCorrection bool
+	digit   int
+	posCorr bool
 }
 
-func (g *gtin) Verify(code string) bool {
+// Verify implements checkdigit.Verifier interface.
+func (g gtin) Verify(code string) bool {
 
 	if len(code) != g.digit {
 		return false
@@ -15,6 +16,7 @@ func (g *gtin) Verify(code string) bool {
 	return err == nil && i == int(code[len(code)-1]-'0')
 }
 
+// Generate implements checkdigit.Generator interface.
 func (g *gtin) Generate(seed string) (int, error) {
 
 	if len(seed) != g.digit-1 {
@@ -26,7 +28,7 @@ func (g *gtin) Generate(seed string) (int, error) {
 		if isNotNumber(n) {
 			return 0, ErrInvalidArgument
 		}
-		if g.isPositionCorrection {
+		if g.posCorr {
 			i++
 		}
 		if i%2 == 0 {

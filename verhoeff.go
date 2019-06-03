@@ -7,7 +7,7 @@ type verhoeff struct {
 }
 
 // Verify implements checkdigit.Verifier interface.
-func (v *verhoeff) Verify(code string) bool {
+func (v verhoeff) Verify(code string) bool {
 
 	if len(code) < 2 {
 		return false

@@ -1,3 +1,6 @@
+/*
+  Provide check digit algorithms and calculators written by Go.
+*/
 package checkdigit
 
 import "errors"
@@ -18,19 +21,19 @@ type (
 	}
 )
 
-// ErrInvalidArgument is happen when given wrong argument.
+// ErrInvalidArgument is happening when given the wrong argument.
 var ErrInvalidArgument = errors.New("checkdigit: invalid argument")
 
 func isNotNumber(n rune) bool {
 	return n < '0' || '9' < n
 }
 
-// NewLuhn returns new Provider that implemented luhn algorithm.
+// NewLuhn returns a new Provider that implemented the Luhn algorithm.
 func NewLuhn() Provider {
 	return &luhn{}
 }
 
-// NewDamm returns new Provider that implemented damm algorithm.
+// NewDamm returns a new Provider that implemented the Damm algorithm.
 func NewDamm() Provider {
 	return &damm{
 		matrix: [][]int{
@@ -48,7 +51,7 @@ func NewDamm() Provider {
 	}
 }
 
-// NewVerhoeff returns new Provider that implemented verhoeff algorithm.
+// NewVerhoeff returns a new Provider that implemented the Verhoeff algorithm.
 func NewVerhoeff() Provider {
 	return &verhoeff{
 		multiplication: [][]int{
@@ -77,64 +80,64 @@ func NewVerhoeff() Provider {
 	}
 }
 
-// NewISBN10 returns new Provider that implemented modulus 11 weight 10 to 2 calculator.
+// NewISBN10 returns a new Provider that implemented modulus 11 weight 10 to 2 calculator.
 func NewISBN10() Provider {
 	return &isbn10{}
 }
 
-// NewISBN13 returns new Provider that implemented modulus 10 weight 3 calculator.
+// NewISBN13 returns a new Provider that implemented modulus 10 weight 3 calculator.
 func NewISBN13() Provider {
 	return &isbn13{}
 }
 
-// NewEAN8 returns new Provider that implemented GTIN-8 calculator.
+// NewEAN8 returns a new Provider that implemented GTIN-8 with position correction calculator.
 func NewEAN8() Provider {
 	return &gtin{
-		digit:                8,
-		isPositionCorrection: true,
+		digit:   8,
+		posCorr: true,
 	}
 }
 
-// NewEAN13 returns new Provider that implemented GTIN-13 calculator.
+// NewEAN13 returns a new Provider that implemented GTIN-13 with position correction calculator.
 func NewEAN13() Provider {
 	return &gtin{
-		digit:                13,
-		isPositionCorrection: true,
+		digit:   13,
+		posCorr: true,
 	}
 }
 
-// NewJAN8 returns new Provider that implemented GTIN-8 calculator.
+// NewJAN8 returns a new Provider that implemented GTIN-8 with position correction calculator.
 func NewJAN8() Provider {
 	return &gtin{
-		digit:                8,
-		isPositionCorrection: true,
+		digit:   8,
+		posCorr: true,
 	}
 }
 
-// NewJAN13 returns new Provider that implemented GTIN-13 calculator.
+// NewJAN13 returns a new Provider that implemented GTIN-13 with position correction calculator.
 func NewJAN13() Provider {
 	return &gtin{
-		digit:                13,
-		isPositionCorrection: true,
+		digit:   13,
+		posCorr: true,
 	}
 }
 
-// NewITF returns new Provider that implemented GTIN-14 calculator.
+// NewITF returns a new Provider that implemented GTIN-14 calculator.
 func NewITF() Provider {
 	return &gtin{
 		digit: 14,
 	}
 }
 
-// NewUPC returns new Provider that implemented GTIN-12 calculator.
+// NewUPC returns a new Provider that implemented GTIN-12 with position correction calculator.
 func NewUPC() Provider {
 	return &gtin{
-		digit:                12,
-		isPositionCorrection: true,
+		digit:   12,
+		posCorr: true,
 	}
 }
 
-// NewSSCC returns new Provider that implemented GTIN-18 calculator.
+// NewSSCC returns a new Provider that implemented GTIN-18 calculator.
 func NewSSCC() Provider {
 	return &gtin{
 		digit: 18,
