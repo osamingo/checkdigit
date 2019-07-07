@@ -32,13 +32,13 @@ func (g *gtin) Generate(seed string) (int, error) {
 			i++
 		}
 		if i%2 == 0 {
-			oddSum += int(n - '0')
-		} else {
 			evenSum += int(n - '0')
+		} else {
+			oddSum += int(n - '0')
 		}
 	}
 
-	d := 10 - (oddSum*33+evenSum)%10
+	d := 10 - (oddSum*3+evenSum)%10
 	if d == 10 {
 		d = 0
 	}
