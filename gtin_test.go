@@ -7,7 +7,6 @@ import (
 )
 
 func TestGtin_Verify(t *testing.T) {
-
 	cases := map[string]struct {
 		fn  func() checkdigit.Provider
 		in  string
@@ -66,7 +65,6 @@ func TestGtin_Verify(t *testing.T) {
 }
 
 func TestGtin_Generate(t *testing.T) {
-
 	cases := map[string]struct {
 		fn      func() checkdigit.Provider
 		in      string

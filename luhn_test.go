@@ -7,7 +7,6 @@ import (
 )
 
 func TestLuhn_Verify(t *testing.T) {
-
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -47,7 +46,6 @@ func TestLuhn_Verify(t *testing.T) {
 }
 
 func TestLuhn_Generate(t *testing.T) {
-
 	cases := map[string]struct {
 		in      string
 		out     int

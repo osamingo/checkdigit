@@ -7,7 +7,6 @@ type gtin struct {
 
 // Verify implements checkdigit.Verifier interface.
 func (g gtin) Verify(code string) bool {
-
 	if len(code) != g.digit {
 		return false
 	}
@@ -18,7 +17,6 @@ func (g gtin) Verify(code string) bool {
 
 // Generate implements checkdigit.Generator interface.
 func (g *gtin) Generate(seed string) (int, error) {
-
 	if len(seed) != g.digit-1 {
 		return 0, ErrInvalidArgument
 	}

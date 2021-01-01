@@ -8,7 +8,6 @@ type verhoeff struct {
 
 // Verify implements checkdigit.Verifier interface.
 func (v verhoeff) Verify(code string) bool {
-
 	if len(code) < 2 {
 		return false
 	}
@@ -19,7 +18,6 @@ func (v verhoeff) Verify(code string) bool {
 
 // Generate implements checkdigit.Generator interface.
 func (v *verhoeff) Generate(seed string) (int, error) {
-
 	if seed == "" {
 		return 0, ErrInvalidArgument
 	}

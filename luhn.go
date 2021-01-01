@@ -4,7 +4,6 @@ type luhn struct{}
 
 // Verify implements checkdigit.Verifier interface.
 func (l luhn) Verify(code string) bool {
-
 	if len(code) < 2 {
 		return false
 	}
@@ -15,7 +14,6 @@ func (l luhn) Verify(code string) bool {
 
 // Generate implements checkdigit.Generator interface.
 func (l *luhn) Generate(seed string) (int, error) {
-
 	if seed == "" {
 		return 0, ErrInvalidArgument
 	}

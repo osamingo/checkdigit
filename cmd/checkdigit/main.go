@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-
 	const (
 		errExitCode = 1
 		generateCmd = "generate"
@@ -48,11 +47,10 @@ func main() {
 	default:
 		flag.Usage()
 	}
-
 }
 
 func takeProvider(name string) checkdigit.Provider {
-	switch strings.ToLower(strings.Replace(name, "-", "", -1)) {
+	switch strings.ToLower(strings.ReplaceAll(name, "-", "")) {
 	case "luhn":
 		return checkdigit.NewLuhn()
 	case "verhoeff":
@@ -78,25 +76,28 @@ func takeProvider(name string) checkdigit.Provider {
 	case "sscc":
 		return checkdigit.NewSSCC()
 	}
+
 	return nil
 }
 
 func generate(g checkdigit.Generator, seed string) error {
 	cd, err := g.Generate(seed)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to generate with seed, message: %w", err)
 	}
 	if cd > 9 {
 		fmt.Fprintf(os.Stderr, "%s\n", "X")
 	} else {
 		fmt.Fprintf(os.Stderr, "%d\n", cd)
 	}
+
 	return nil
 }
 
 func verify(v checkdigit.Verifier, target string) bool {
 	ret := v.Verify(target)
 	fmt.Fprintf(os.Stderr, "%t\n", ret)
+
 	return ret
 }
 
