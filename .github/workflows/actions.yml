@@ -14,26 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
-      - name: Download golangci-lint command
-        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.21.0
+        uses: actions/checkout@v2
       - name: Lint Go Code
-        run: PATH=$PATH:$(go env GOPATH)/bin golangci-lint run ./...
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.34.1
   test:
     name: Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [ '1.11.x', '1.12.x', '1.13.x' ]
+        go: [ '1.14.x', '1.15.x' ]
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
       - name: Set up Go
-        uses: actions/setup-go@v1
+        uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go }}
-      - name: Check out code
-        uses: actions/checkout@v1
       - name: Test Go Code
-        run: PATH=$PATH:$(go env GOPATH)/bin go test -covermode=atomic -coverprofile=coverage.txt ./...
+        run: go test -covermode=atomic -coverprofile=coverage.txt ./...
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
