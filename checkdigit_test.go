@@ -10,7 +10,6 @@ import (
 )
 
 func TestNewLuhn(t *testing.T) {
-
 	p := checkdigit.NewLuhn()
 	if p == nil {
 		t.Error("failed to generate luhn provider")
@@ -18,7 +17,6 @@ func TestNewLuhn(t *testing.T) {
 }
 
 func TestNewDamm(t *testing.T) {
-
 	p := checkdigit.NewDamm()
 	if p == nil {
 		t.Error("failed to generate damm provider")
@@ -26,7 +24,6 @@ func TestNewDamm(t *testing.T) {
 }
 
 func TestNewVerhoeff(t *testing.T) {
-
 	p := checkdigit.NewVerhoeff()
 	if p == nil {
 		t.Error("failed to generate verhoeff provider")
@@ -34,7 +31,6 @@ func TestNewVerhoeff(t *testing.T) {
 }
 
 func TestNewISBN10(t *testing.T) {
-
 	v := checkdigit.NewISBN10()
 	if v == nil {
 		t.Error("failed to generate isbn10 verifier")
@@ -42,7 +38,6 @@ func TestNewISBN10(t *testing.T) {
 }
 
 func TestNewISBN13(t *testing.T) {
-
 	p := checkdigit.NewISBN13()
 	if p == nil {
 		t.Error("failed to generate isbn13 provider")
@@ -50,7 +45,6 @@ func TestNewISBN13(t *testing.T) {
 }
 
 func TestNewEAN8(t *testing.T) {
-
 	p := checkdigit.NewEAN8()
 	if p == nil {
 		t.Error("failed to generate ean8 provider")
@@ -58,7 +52,6 @@ func TestNewEAN8(t *testing.T) {
 }
 
 func TestNewEAN13(t *testing.T) {
-
 	p := checkdigit.NewEAN13()
 	if p == nil {
 		t.Error("failed to generate ean13 provider")
@@ -66,7 +59,6 @@ func TestNewEAN13(t *testing.T) {
 }
 
 func TestNewJAN8(t *testing.T) {
-
 	p := checkdigit.NewJAN8()
 	if p == nil {
 		t.Error("failed to generate jan8 provider")
@@ -74,7 +66,6 @@ func TestNewJAN8(t *testing.T) {
 }
 
 func TestNewJAN13(t *testing.T) {
-
 	p := checkdigit.NewJAN13()
 	if p == nil {
 		t.Error("failed to generate jan13 provider")
@@ -82,7 +73,6 @@ func TestNewJAN13(t *testing.T) {
 }
 
 func TestNewITF(t *testing.T) {
-
 	p := checkdigit.NewITF()
 	if p == nil {
 		t.Error("failed to generate itf provider")
@@ -90,7 +80,6 @@ func TestNewITF(t *testing.T) {
 }
 
 func TestNewUPC(t *testing.T) {
-
 	p := checkdigit.NewUPC()
 	if p == nil {
 		t.Error("failed to generate upc provider")
@@ -98,7 +87,6 @@ func TestNewUPC(t *testing.T) {
 }
 
 func TestNewSSCC(t *testing.T) {
-
 	p := checkdigit.NewSSCC()
 	if p == nil {
 		t.Error("failed to generate sscc provider")
@@ -106,7 +94,6 @@ func TestNewSSCC(t *testing.T) {
 }
 
 func ExampleNewLuhn() {
-
 	p := checkdigit.NewLuhn()
 
 	const seed = "411111111111111"
@@ -123,7 +110,6 @@ func ExampleNewLuhn() {
 }
 
 func ExampleNewDamm() {
-
 	p := checkdigit.NewDamm()
 
 	const seed = "572"
@@ -140,7 +126,6 @@ func ExampleNewDamm() {
 }
 
 func ExampleNewVerhoeff() {
-
 	p := checkdigit.NewVerhoeff()
 
 	const seed = "236"
@@ -157,7 +142,6 @@ func ExampleNewVerhoeff() {
 }
 
 func ExampleNewISBN10() {
-
 	p := checkdigit.NewISBN10()
 
 	const seed = "155860832"
@@ -179,7 +163,6 @@ func ExampleNewISBN10() {
 }
 
 func ExampleNewISBN13() {
-
 	p := checkdigit.NewISBN13()
 
 	const seed = "978000271217"
@@ -196,7 +179,6 @@ func ExampleNewISBN13() {
 }
 
 func ExampleNewEAN8() {
-
 	p := checkdigit.NewEAN8()
 
 	const seed = "9638507"
@@ -213,7 +195,6 @@ func ExampleNewEAN8() {
 }
 
 func ExampleNewEAN13() {
-
 	p := checkdigit.NewEAN13()
 
 	const seed = "590123412345"
@@ -230,7 +211,6 @@ func ExampleNewEAN13() {
 }
 
 func ExampleNewJAN8() {
-
 	p := checkdigit.NewJAN8()
 
 	const seed = "4996871"
@@ -247,7 +227,6 @@ func ExampleNewJAN8() {
 }
 
 func ExampleNewJAN13() {
-
 	p := checkdigit.NewJAN13()
 
 	const seed = "456995111617"
@@ -264,7 +243,6 @@ func ExampleNewJAN13() {
 }
 
 func ExampleNewITF() {
-
 	p := checkdigit.NewITF()
 
 	const seed = "1456995111617"
@@ -281,7 +259,6 @@ func ExampleNewITF() {
 }
 
 func ExampleNewUPC() {
-
 	p := checkdigit.NewUPC()
 
 	const seed = "01234567890"
@@ -298,7 +275,6 @@ func ExampleNewUPC() {
 }
 
 func ExampleNewSSCC() {
-
 	p := checkdigit.NewSSCC()
 
 	const seed = "04569951110000001"

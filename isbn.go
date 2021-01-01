@@ -7,7 +7,6 @@ type (
 
 // Verify implements checkdigit.Verifier interface.
 func (i10 isbn10) Verify(code string) bool {
-
 	if len(code) != 10 {
 		return false
 	}
@@ -35,7 +34,6 @@ func (i10 isbn10) Verify(code string) bool {
 // Generate implements checkdigit.Generator interface.
 // This will return a "10" instead of an "X", since the interface expects an int.
 func (i10 *isbn10) Generate(seed string) (int, error) {
-
 	if len(seed) != 9 {
 		return 0, ErrInvalidArgument
 	}
@@ -57,7 +55,6 @@ func (i10 *isbn10) Generate(seed string) (int, error) {
 
 // Verify implements checkdigit.Verifier interface.
 func (i13 isbn13) Verify(code string) bool {
-
 	if len(code) != 13 {
 		return false
 	}
@@ -68,7 +65,6 @@ func (i13 isbn13) Verify(code string) bool {
 
 // Generate implements checkdigit.Generator interface.
 func (i13 *isbn13) Generate(seed string) (int, error) {
-
 	if len(seed) != 12 {
 		return 0, ErrInvalidArgument
 	}

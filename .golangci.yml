@@ -10,6 +10,8 @@ linters:
   disable:
     - whitespace
     - wsl
+    - gomnd
+    - forbidigo
 
 issues:
   exclude-rules:
@@ -17,3 +19,4 @@ issues:
       linters:
         - dupl
         - funlen
+        - paralleltest

@@ -7,7 +7,6 @@ import (
 )
 
 func TestIsbn10_Verify(t *testing.T) {
-
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -106,7 +105,6 @@ func TestIsbn10_Generate(t *testing.T) {
 }
 
 func TestIsbn13_Verify(t *testing.T) {
-
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -152,7 +150,6 @@ func TestIsbn13_Verify(t *testing.T) {
 }
 
 func TestIsbn13_Generate(t *testing.T) {
-
 	cases := map[string]struct {
 		in      string
 		out     int

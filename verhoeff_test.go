@@ -7,7 +7,6 @@ import (
 )
 
 func TestVerhoeff_Verify(t *testing.T) {
-
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -47,7 +46,6 @@ func TestVerhoeff_Verify(t *testing.T) {
 }
 
 func TestVerhoeff_Generate(t *testing.T) {
-
 	cases := map[string]struct {
 		in      string
 		out     int
