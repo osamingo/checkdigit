@@ -10,6 +10,8 @@ import (
 )
 
 func TestNewLuhn(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewLuhn()
 	if p == nil {
 		t.Error("failed to generate luhn provider")
@@ -17,6 +19,8 @@ func TestNewLuhn(t *testing.T) {
 }
 
 func TestNewDamm(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewDamm()
 	if p == nil {
 		t.Error("failed to generate damm provider")
@@ -24,6 +28,8 @@ func TestNewDamm(t *testing.T) {
 }
 
 func TestNewVerhoeff(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewVerhoeff()
 	if p == nil {
 		t.Error("failed to generate verhoeff provider")
@@ -31,6 +37,8 @@ func TestNewVerhoeff(t *testing.T) {
 }
 
 func TestNewISBN10(t *testing.T) {
+	t.Parallel()
+
 	v := checkdigit.NewISBN10()
 	if v == nil {
 		t.Error("failed to generate isbn10 verifier")
@@ -38,6 +46,8 @@ func TestNewISBN10(t *testing.T) {
 }
 
 func TestNewISBN13(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewISBN13()
 	if p == nil {
 		t.Error("failed to generate isbn13 provider")
@@ -45,6 +55,8 @@ func TestNewISBN13(t *testing.T) {
 }
 
 func TestNewEAN8(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewEAN8()
 	if p == nil {
 		t.Error("failed to generate ean8 provider")
@@ -52,6 +64,8 @@ func TestNewEAN8(t *testing.T) {
 }
 
 func TestNewEAN13(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewEAN13()
 	if p == nil {
 		t.Error("failed to generate ean13 provider")
@@ -59,6 +73,8 @@ func TestNewEAN13(t *testing.T) {
 }
 
 func TestNewJAN8(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewJAN8()
 	if p == nil {
 		t.Error("failed to generate jan8 provider")
@@ -66,6 +82,8 @@ func TestNewJAN8(t *testing.T) {
 }
 
 func TestNewJAN13(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewJAN13()
 	if p == nil {
 		t.Error("failed to generate jan13 provider")
@@ -73,6 +91,8 @@ func TestNewJAN13(t *testing.T) {
 }
 
 func TestNewITF(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewITF()
 	if p == nil {
 		t.Error("failed to generate itf provider")
@@ -80,6 +100,8 @@ func TestNewITF(t *testing.T) {
 }
 
 func TestNewUPC(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewUPC()
 	if p == nil {
 		t.Error("failed to generate upc provider")
@@ -87,6 +109,8 @@ func TestNewUPC(t *testing.T) {
 }
 
 func TestNewSSCC(t *testing.T) {
+	t.Parallel()
+
 	p := checkdigit.NewSSCC()
 	if p == nil {
 		t.Error("failed to generate sscc provider")

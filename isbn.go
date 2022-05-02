@@ -13,18 +13,17 @@ func (i10 isbn10) Verify(code string) bool {
 
 	sum, multiply := 0, 10
 	for _, n := range code {
-
-		var d int
+		var digit int
 		switch {
 		case n == 'X':
-			d = 10
+			digit = 10
 		case isNotNumber(n):
 			return false
 		default:
-			d = int(n - '0')
+			digit = int(n - '0')
 		}
 
-		sum += multiply * d
+		sum += multiply * digit
 		multiply--
 	}
 
@@ -41,7 +40,6 @@ func (i10 *isbn10) Generate(seed string) (int, error) {
 	sum, multiply := 0, 10
 
 	for _, n := range seed {
-
 		if isNotNumber(n) {
 			return 0, ErrInvalidArgument
 		}

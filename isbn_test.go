@@ -7,6 +7,8 @@ import (
 )
 
 func TestIsbn10_Verify(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -42,7 +44,10 @@ func TestIsbn10_Verify(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			ret := checkdigit.NewISBN10().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
@@ -52,6 +57,8 @@ func TestIsbn10_Verify(t *testing.T) {
 }
 
 func TestIsbn10_Generate(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in      string
 		out     int
@@ -92,7 +99,10 @@ func TestIsbn10_Generate(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			r, err := checkdigit.NewISBN10().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")
@@ -105,6 +115,8 @@ func TestIsbn10_Generate(t *testing.T) {
 }
 
 func TestIsbn13_Verify(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -140,7 +152,10 @@ func TestIsbn13_Verify(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			ret := checkdigit.NewISBN13().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
@@ -150,6 +165,8 @@ func TestIsbn13_Verify(t *testing.T) {
 }
 
 func TestIsbn13_Generate(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in      string
 		out     int
@@ -190,7 +207,10 @@ func TestIsbn13_Generate(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			r, err := checkdigit.NewISBN13().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")
