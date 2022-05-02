@@ -7,6 +7,8 @@ import (
 )
 
 func TestGtin_Verify(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		fn  func() checkdigit.Provider
 		in  string
@@ -55,7 +57,10 @@ func TestGtin_Verify(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			ret := c.fn().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
@@ -65,6 +70,8 @@ func TestGtin_Verify(t *testing.T) {
 }
 
 func TestGtin_Generate(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		fn      func() checkdigit.Provider
 		in      string
@@ -120,7 +127,10 @@ func TestGtin_Generate(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			r, err := c.fn().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")

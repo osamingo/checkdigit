@@ -19,12 +19,12 @@ func main() {
 	flag.Usage = usage
 
 	var pname string
-	flag.StringVar(&pname, "p", "luhn", "")
+	flag.StringVar(&pname, "provider", "luhn", "")
 	flag.StringVar(&pname, "provider", "luhn", "")
 	flag.Parse()
 
-	p := takeProvider(pname)
-	if p == nil {
+	provider := takeProvider(pname)
+	if provider == nil {
 		fmt.Fprintf(os.Stderr, "Unimplemented %s provider\n", pname)
 		os.Exit(errExitCode)
 	}
@@ -36,12 +36,12 @@ func main() {
 
 	switch args[0] {
 	case generateCmd:
-		if err := generate(p, args[1]); err != nil {
+		if err := generate(provider, args[1]); err != nil {
 			fmt.Fprintf(os.Stderr, "%s\n", err)
 			os.Exit(errExitCode)
 		}
 	case verifyCmd:
-		if !verify(p, args[1]) {
+		if !verify(provider, args[1]) {
 			os.Exit(errExitCode)
 		}
 	default:
@@ -49,6 +49,7 @@ func main() {
 	}
 }
 
+//nolint: cyclop
 func takeProvider(name string) checkdigit.Provider {
 	switch strings.ToLower(strings.ReplaceAll(name, "-", "")) {
 	case "luhn":
@@ -114,8 +115,7 @@ COMMANDS:
     help	Shows a list of commands or help for one command
 
 GLOBAL OPTIONS
-    -p, --provider	Select use provider [default: luhn]
-`
+    -p, --provider	Select use provider [default: luhn]`
 	fmt.Fprintln(os.Stderr, usage)
 	os.Exit(2)
 }

@@ -125,7 +125,8 @@ func NewJAN13() Provider {
 // NewITF returns a new Provider that implemented GTIN-14 calculator.
 func NewITF() Provider {
 	return &gtin{
-		digit: 14,
+		digit:   14,
+		posCorr: false,
 	}
 }
 
@@ -140,6 +141,7 @@ func NewUPC() Provider {
 // NewSSCC returns a new Provider that implemented GTIN-18 calculator.
 func NewSSCC() Provider {
 	return &gtin{
-		digit: 18,
+		digit:   18,
+		posCorr: false,
 	}
 }

@@ -7,6 +7,8 @@ import (
 )
 
 func TestVerhoeff_Verify(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -36,7 +38,10 @@ func TestVerhoeff_Verify(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			ret := checkdigit.NewVerhoeff().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
@@ -46,6 +51,8 @@ func TestVerhoeff_Verify(t *testing.T) {
 }
 
 func TestVerhoeff_Generate(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in      string
 		out     int
@@ -78,7 +85,10 @@ func TestVerhoeff_Generate(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			r, err := checkdigit.NewVerhoeff().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")

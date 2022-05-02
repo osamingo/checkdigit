@@ -7,6 +7,8 @@ import (
 )
 
 func TestDamm_Verify(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in  string
 		out bool
@@ -36,7 +38,10 @@ func TestDamm_Verify(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			ret := checkdigit.NewDamm().Verify(c.in)
 			if c.out != ret {
 				t.Errorf("not equal, expected = %v, given = %v", c.out, ret)
@@ -46,6 +51,8 @@ func TestDamm_Verify(t *testing.T) {
 }
 
 func TestDamm_Generate(t *testing.T) {
+	t.Parallel()
+
 	cases := map[string]struct {
 		in      string
 		out     int
@@ -86,7 +93,10 @@ func TestDamm_Generate(t *testing.T) {
 
 	for name, c := range cases {
 		c := c
+
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
 			r, err := checkdigit.NewDamm().Generate(c.in)
 			if c.isError && err == nil {
 				t.Error("unexpected error")
