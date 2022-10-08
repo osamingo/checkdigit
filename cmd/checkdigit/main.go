@@ -49,8 +49,7 @@ func main() {
 	}
 }
 
-//nolint: cyclop
-func takeProvider(name string) checkdigit.Provider {
+func takeProvider(name string) checkdigit.Provider { //nolint: cyclop
 	switch strings.ToLower(strings.ReplaceAll(name, "-", "")) {
 	case "luhn":
 		return checkdigit.NewLuhn()
