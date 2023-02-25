@@ -22,14 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [ '1.18.x', '1.19.x' ]
+        go: [ 'stable', 'oldstable' ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go }}
       - run: go test -race -covermode=atomic -coverprofile=coverage.txt ./...
-      - uses: codecov/codecov-action@v2
-        with:
-          file: coverage.txt
-          yml: codecov.yml
+      - uses: codecov/codecov-action@v3
