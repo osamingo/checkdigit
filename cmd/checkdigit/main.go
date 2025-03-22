@@ -1,5 +1,6 @@
 package main
 
+//nolint: depguard
 import (
 	"flag"
 	"fmt"

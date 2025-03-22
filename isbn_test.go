@@ -43,8 +43,6 @@ func TestIsbn10_Verify(t *testing.T) {
 	}
 
 	for name, c := range cases {
-		c := c
-
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
@@ -98,8 +96,6 @@ func TestIsbn10_Generate(t *testing.T) {
 	}
 
 	for name, c := range cases {
-		c := c
-
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
@@ -151,8 +147,6 @@ func TestIsbn13_Verify(t *testing.T) {
 	}
 
 	for name, c := range cases {
-		c := c
-
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 
@@ -206,8 +200,6 @@ func TestIsbn13_Generate(t *testing.T) {
 	}
 
 	for name, c := range cases {
-		c := c
-
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 

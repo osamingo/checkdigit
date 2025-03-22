@@ -1,6 +1,6 @@
 linters-settings:
   errcheck:
-    check-type-asserts: true
+    check-type-assertions: true
     check-blank: true
   misspell:
     locale: US
@@ -12,9 +12,10 @@ linters-settings:
 linters:
   enable-all: true
   disable:
-    - gomnd
+    - mnd
     - varnamelen
     - wsl
+    - recvcheck
 
 issues:
   exclude-rules:
@@ -27,3 +28,5 @@ issues:
         - dupl
         - ifshort
         - funlen
+        - exhaustruct
+        - depguard
